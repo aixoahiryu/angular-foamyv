@@ -1,0 +1,20 @@
+<div>
+  <ng-container *ngIf="search2.length==0">
+    Total amount of products:
+    <span style="color:red">{{total_products}}</span>
+  </ng-container>
+  <ng-container *ngIf="search2.length>0">
+    Search term:
+    <span style="color:red">{{search2}}</span>
+  </ng-container>
+</div>
+
+<div style="" id="container">
+  <ng-container *ngFor="let Item of filterBy(order, asc)">
+    <app-com2
+      *ngIf="Item.name.includes(search)"
+      [item1]="Item"
+      (count)="onCount($event)"
+    ></app-com2>
+  </ng-container>
+</div>

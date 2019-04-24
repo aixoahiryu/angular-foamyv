@@ -4,8 +4,8 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
-import { Com1Component } from "./com1/com1.component";
-import { Com2Component } from "./com2/com2.component";
+import { Com1Component } from "./component1/component1.component";
+import { Com2Component } from "./component2/component2.component";
 import { MyFilterPipe } from "./pipe/my-filter.pipe";
 import { Nav1Component } from "./nav1/nav1.component";
 import { Nav2Component } from "./nav2/nav2.component";

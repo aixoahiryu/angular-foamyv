@@ -1,0 +1,29 @@
+.dim {
+  color: lightgray;
+}
+.price {
+  font-size: 30px;
+}
+.btnCart {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.title1 {
+  border-bottom-style: solid;
+  border-bottom-color: orange;
+}
+.title2 {
+}
+.txtTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Com1Main {
+  float: left;
+  margin: 20px;
+}

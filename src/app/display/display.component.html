@@ -1,0 +1,7 @@
+<ng-container *ngFor="let Item of filterBy(order, asc)">
+  <app-com1
+    *ngIf="Item.title.includes(search)"
+    [item1]="Item"
+    (count)="onCount($event)"
+  ></app-com1>
+</ng-container>

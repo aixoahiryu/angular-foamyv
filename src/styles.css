@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  font-family: sans-serif;
+  /*background: url("https://www.toptal.com/designers/subtlepatterns/patterns/interlaced.png");*/
+}
+input {
+  color: white;
+  background-color: black;
+}

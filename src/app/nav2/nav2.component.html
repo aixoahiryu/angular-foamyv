@@ -1,0 +1,22 @@
+<div class="nav2">
+  Filter:
+  <input #searchBox class="search-box" (input)="sendSearch(searchBox.value)" />
+  Search:
+  <input
+    #searchBox2
+    class="search-box"
+    (input)="sendSearch2(searchBox2.value)"
+  />
+  <select #selectSort (input)="sendOrder(selectSort.value)">
+    <option value="title">title</option>
+    <option value="price">price</option>
+  </select>
+  <select #selectAsc (input)="sendAsc(selectAsc.value)">
+    <option value="asc">Asc</option>
+    <option value="desc">Desc</option>
+  </select>
+  <div style="margin-left: 10px">
+    API:<br />
+    <a routerLink="sendo">Sendo</a>
+  </div>
+</div>

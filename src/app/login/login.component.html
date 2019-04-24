@@ -1,0 +1,15 @@
+<div id="loginbox">
+  <ng-container *ngIf="!loginState">
+    Username:<input #inputUser name="username" (input)="inputUser.value" />
+    Password:
+    <input #inputPassword name="password" (input)="inputPassword.value" />
+    <input
+      type="submit"
+      value="Send"
+      (click)="login(inputUser.value, inputPassword.value)"
+    />
+  </ng-container>
+  <ng-container *ngIf="loginState">
+    Logged in: {{name}} <button (click)="logout()">Log out</button>
+  </ng-container>
+</div>

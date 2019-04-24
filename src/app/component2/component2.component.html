@@ -1,0 +1,16 @@
+<div class="Com2Main">
+  <img src="{{item1.img_url}}" />
+  <div class="txtTitle">
+    <a routerLink="/product/{{item1.id}}"
+      ><h3 class="title1">{{item1.name.slice(0, 20)}}</h3>
+    </a>
+    <span class="title2"></span>
+  </div>
+
+  <div>
+    <span class="price">{{item1.price}}</span>VND<br />
+    <span class="dim">or 9x $5.44</span>
+  </div>
+  <br /><br />
+  <a class="btnCart" (click)="sendCount(1)">Add to cart</a>
+</div>

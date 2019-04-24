@@ -1,0 +1,23 @@
+.nav2 {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow-x: hidden;
+  margin-top: 50px;
+  color: white;
+}
+.search-box {
+  width: 140px;
+  margin: 10px;
+}
+.nav2 > select {
+  margin: 10px;
+}
+a {
+  text-decoration: none;
+  color: red;
+}
