@@ -1,0 +1,28 @@
+<div>
+  Total amount of products:
+  <span style="color:red">{{count}}</span>
+</div>
+
+<div style="" id="container">
+  <table>
+    <tr>
+      <th>Image</th>
+      <th>Product name</th>
+      <th>Price</th>
+      <th>Amount</th>
+    </tr>
+    <ng-container *ngFor="let Item of filterBy(order, asc)">
+      <tr>
+        <td><img src="{{Item.img_url}}" /></td>
+        <td><a routerLink="/product/{{Item.id}}">{{Item.name}}</a></td>
+        <td>{{Item.price}}</td>
+        <td>{{Item.counter_view}}</td>
+      </tr>
+    </ng-container>
+    <tr>
+      <td style="text-align:right; color:red" colspan="4">
+        Total cost: {{total}}
+      </td>
+    </tr>
+  </table>
+</div>
