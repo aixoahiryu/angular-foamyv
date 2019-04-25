@@ -27,4 +27,12 @@ export class Nav2Component implements OnInit {
   sendSearch2(s2: string) {
     this.messageService.setSearch2(s2);
   }
+
+  sendMin(s2: number) {
+    this.messageService.setMinPrice(s2);
+  }
+
+  sendMax(s2: number) {
+    this.messageService.setMaxPrice(s2);
+  }
 }

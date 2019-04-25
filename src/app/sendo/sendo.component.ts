@@ -45,6 +45,9 @@ export class SendoComponent implements OnInit {
   searchData: any[];
   display: any[];
 
+  minPrice: number = 0;
+  maxPrice: number = 0;
+
   filterTotal = -1;
 
   ngOnInit() {
@@ -58,6 +61,8 @@ export class SendoComponent implements OnInit {
     this.messageService.asc.subscribe(mess => (this.asc = mess));
     this.messageService.order.subscribe(mess => (this.order = mess));
     this.messageService.count.subscribe(mess => (this.count = mess));
+    this.messageService.minPrice.subscribe(mess => (this.minPrice = mess));
+    this.messageService.maxPrice.subscribe(mess => (this.maxPrice = mess));
 
     this.sendo.getProducts().subscribe(result => {
       this.total_products = result.product_total;
@@ -83,6 +88,14 @@ export class SendoComponent implements OnInit {
       return this.display.sort((a, b) =>
         a[prop] < b[prop] ? 1 : a[prop] === b[prop] ? 0 : -1
       );
+  }
+
+  filter(Item: any)
+  {
+    if(Item.name.includes(this.search))
+    {
+      return true;
+    }
   }
 
   onCount(c: number) {

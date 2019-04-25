@@ -7,6 +7,9 @@
     class="search-box"
     (input)="sendSearch2(searchBox2.value)"
   />
+  Price<br>
+  <input #priceBox class="price-box" (input)="sendMin(priceBox.value)" />-
+  <input #priceBox2 class="price-box" (input)="sendMax(priceBox2.value)" /><br>
   <select #selectSort (input)="sendOrder(selectSort.value)">
     <option value="title">title</option>
     <option value="price">price</option>
