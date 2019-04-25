@@ -70,11 +70,8 @@ export class AppService {
   }
 
   createUser(email, password){
-  firebaseApp
-    .auth()
-    .createUserWithEmailAndPassword(email, password).catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-    });
+    return Observable.of(
+      firebaseApp.auth().createUserWithEmailAndPassword(email, password)
+    );
   }
 }
