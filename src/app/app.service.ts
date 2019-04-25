@@ -69,13 +69,12 @@ export class AppService {
       });
   }
 
-  createUser(value, avatar){
-  return firebaseApp.collection('users').add({
-    name: value.name,
-    nameToSearch: value.name.toLowerCase(),
-    surname: value.surname,
-    age: parseInt(value.age),
-    avatar: avatar
-  });
-}
+  createUser(email, password){
+  firebaseApp
+    .auth()
+    .createUserWithEmailAndPassword(email, password).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
+  }
 }

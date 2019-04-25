@@ -1,5 +1,5 @@
 import firebase from "firebase";
-//import firebaseAdmin from "firebase-admin";
+//var admin = require("firebase-admin");
 
 
 var config = {
@@ -26,9 +26,10 @@ var adminConfig = {
 
 
 const firebaseApp = firebase.initializeApp(config);
+export default firebaseApp;
+
 /*const admin = firebaseAdmin.initializeApp({
   credential: admin.credential.cert(adminConfig),
   databaseURL: 'https://angular1-25780.firebaseio.com'
-});*/
-export default firebaseApp;
-//export default admin;
+});
+export default admin;*/
