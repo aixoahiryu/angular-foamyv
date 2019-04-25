@@ -5,6 +5,9 @@ import { BehaviorSubject } from "rxjs";
 export class MessageService {
   CartItems: any[] = [];
 
+  private messageSource = new BehaviorSubject("");
+  message = this.messageSource.asObservable();
+
   private searchSource = new BehaviorSubject("");
   private search2Source = new BehaviorSubject("");
   private ascSource = new BehaviorSubject("asc");
