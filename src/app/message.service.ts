@@ -10,11 +10,23 @@ export class MessageService {
   private ascSource = new BehaviorSubject("asc");
   private orderSource = new BehaviorSubject("title");
   private countSource = new BehaviorSubject(0);
+  private minPriceSource = new BehaviorSubject(0);
+  private maxPriceSource = new BehaviorSubject(0);
   search = this.searchSource.asObservable();
   search2 = this.search2Source.asObservable();
   count = this.countSource.asObservable();
   asc = this.ascSource.asObservable();
   order = this.orderSource.asObservable();
+  minPrice = this.minPriceSource.asObservable();
+  maxPrice = this.maxPriceSource.asObservable();
+
+  setMinPrice(c: number) {
+    this.minPriceSource.next(c);
+  }
+
+  setMaxPrice(c: number) {
+    this.maxPriceSource.next(c);
+  }
 
   setSearch(message: string) {
     this.searchSource.next(message);
