@@ -6,6 +6,7 @@
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   height: 50px;
+  text-align: right;
 }
 .CartIcon {
   position: absolute;

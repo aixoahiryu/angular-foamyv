@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import firebaseApp from "./firebase.config";
+//import admin from "./firebase.config";
 import { MessageService } from "./message.service";
 
 @Injectable()
@@ -34,7 +35,7 @@ export class AppService {
   }
 
   getUsers() {
-    firebaseApp
+    admin
       .auth()
       .listUsers(1000)
       .then(function(listUsersResult) {
@@ -48,7 +49,7 @@ export class AppService {
   }
 
   addUser() {
-    firebaseApp
+    admin
       .auth()
       .createUser({
         email: "user@example.com",
@@ -67,4 +68,14 @@ export class AppService {
         console.log("Error creating new user:", error);
       });
   }
+
+  createUser(value, avatar){
+  return firebaseApp.collection('users').add({
+    name: value.name,
+    nameToSearch: value.name.toLowerCase(),
+    surname: value.surname,
+    age: parseInt(value.age),
+    avatar: avatar
+  });
+}
 }
