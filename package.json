@@ -24,6 +24,7 @@
     "@firebase/util": "^0.2.13",
     "core-js": "2.6.5",
     "firebase": "5.10.0",
+    "firebase-admin": "^7.3.0",
     "rxjs": "5.5.12",
     "zone.js": "0.8.29"
   },
