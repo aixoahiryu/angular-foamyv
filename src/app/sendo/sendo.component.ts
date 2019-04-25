@@ -94,7 +94,12 @@ export class SendoComponent implements OnInit {
   {
     if(Item.name.includes(this.search))
     {
-      return true;
+      if(this.minPrice!=0 && Item.price>=this.minPrice)
+        {return true;}
+      if(this.maxPrice!=0 && Item.price<=this.maxPrice)
+        {return true;}
+      if(this.minPrice==0 && this.maxPrice==0)
+        {return true;}
     }
   }
 
