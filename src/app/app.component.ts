@@ -1,10 +1,12 @@
 import { Component } from "@angular/core";
 import { Item } from "./item";
+import {slideInAnimation} from "./animation";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: ["./app.component.css"],
+  animations: [slideInAnimation]
 })
 export class AppComponent {
   title = "CodeSandbox";
@@ -47,4 +49,8 @@ export class AppComponent {
   onSearch(s: string) {
     this.search = s;
   }
+
+  prepareRoute(outlet: RouterOutlet) {
+	return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+}
 }

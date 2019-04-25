@@ -2,11 +2,33 @@ import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 import { Item } from "../item";
 import { SendoService } from "../sendo.service";
 import { MessageService } from "../message.service";
+import {trigger, transition, query, style, stagger, animate} from "@angular/animations";
 
 @Component({
   selector: "app-sendo",
   templateUrl: "./sendo.component.html",
-  styleUrls: ["./sendo.component.css"]
+  styleUrls: ["./sendo.component.css"],
+  animations: [
+		trigger('filterAnimation', [
+			transition(':enter, * => 0, * => -1', []),
+			transition(':increment', [
+				query(':enter', [
+					style({ opacity: 0, width: '0px'}),
+					stagger(50, [
+						animate('300ms ease-out', style({ opacity: 1, width: '*'})),
+					]),
+				], { optional: true })
+			]),
+			transition(':decrement', [
+				query(':leave', [
+          style({ width: '*'}),
+					stagger(50, [
+						animate('300ms ease-out', style({ opacity: 0, width: '0px'})),
+					]),
+				])
+			]),
+		]),
+	]
 })
 export class SendoComponent implements OnInit {
   constructor(
@@ -23,12 +45,14 @@ export class SendoComponent implements OnInit {
   searchData: any[];
   display: any[];
 
+  filterTotal = -1;
+
   ngOnInit() {
-    this.messageService.search.subscribe(search => (this.search = search));
+    this.messageService.search.subscribe(search => {this.search = search; this.filterTotal = 10 - search.length});
     this.messageService.search2.subscribe(search => {
       this.sendo
         .searchProducts(search)
-        .subscribe(result => (this.searchData = result.data));
+        .subscribe(result => {this.searchData = result.data});
       this.search2 = search;
     });
     this.messageService.asc.subscribe(mess => (this.asc = mess));

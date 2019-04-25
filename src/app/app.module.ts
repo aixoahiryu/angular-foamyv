@@ -20,6 +20,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { SendoService } from "./sendo.service";
 import { AdminUserComponent } from "./admin-user/admin-user.component";
 import { AuthGuard } from "./auth/auth.guard";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,8 +37,10 @@ import { AuthGuard } from "./auth/auth.guard";
     CartComponent,
     AdminUserComponent
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   providers: [AppService, MessageService, SendoService, AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  
+}

@@ -13,11 +13,12 @@ const routes: Routes = [
   {
     path: "product/:id",
     component: SendoDetailComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: {animation: 'ProductPage'}
   },
-  { path: "sendo", component: SendoComponent },
+  { path: "sendo", component: SendoComponent , data: {animation: 'SendoPage'}},
   { path: "display", component: DisplayComponent },
-  { path: "cart", component: CartComponent, canActivate: [AuthGuard] },
+  { path: "cart", component: CartComponent, canActivate: [AuthGuard] , data: {animation: 'CartPage'}},
   { path: "admin", component: AdminUserComponent }
 ];
 

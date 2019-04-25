@@ -4,7 +4,8 @@ import {
   Input,
   EventEmitter,
   Output,
-  DoCheck
+  DoCheck,
+  AfterViewChecked
 } from "@angular/core";
 import { Item } from "../item";
 import { AppService } from "../app.service";
@@ -15,8 +16,11 @@ import firebaseApp from "../firebase.config";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"]
 })
-export class LoginComponent implements OnInit {
-  ngOnInit() {}
+export class LoginComponent implements OnInit, AfterViewChecked {
+  ngOnInit() {  }
+  ngAfterViewChecked(){
+    this.check();
+  }
 
   ngDoCheck() {
     this.check();

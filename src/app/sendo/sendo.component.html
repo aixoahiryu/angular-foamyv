@@ -9,7 +9,7 @@
   </ng-container>
 </div>
 
-<div style="" id="container">
+<div style="" id="container" [@filterAnimation]="filterTotal">
   <ng-container *ngFor="let Item of filterBy(order, asc)">
     <app-com2
       *ngIf="Item.name.includes(search)"
