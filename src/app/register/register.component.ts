@@ -3,6 +3,7 @@ import { Item } from "../item";
 import { MessageService } from "../message.service";
 import { AppService } from "../app.service";
 import { Router } from "@angular/router";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-register",
@@ -10,7 +11,8 @@ import { Router } from "@angular/router";
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
-  constructor(private messageService: MessageService, private appService: AppService, private router: Router) {}
+  constructor(private messageService: MessageService, private appService: AppService, private router: Router,
+  private location: Location) {}
   email: string = "";
   password: string = "";
 
@@ -18,6 +20,10 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(email, password){
 	  this.appService.createUser(email, password).subscribe(result => {console.log(result);});
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }

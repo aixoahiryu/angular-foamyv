@@ -36,10 +36,10 @@ export class LoginComponent implements OnInit, AfterViewChecked {
     this.appService.getLogin(username, password).subscribe(
       result => {
         this.result = result;
-        this.check();
+        
       },
       error => {
-        this.messageService.setMessage(error);
+        this.messageService.setMessage("Login error");
       }
     );
     console.log(this.result);
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit, AfterViewChecked {
 
   logout() {
     this.appService.logout().subscribe(result => {
-      console.log(result);
+      
       this.check();
     });
   }

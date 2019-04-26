@@ -10,40 +10,24 @@ import {trigger, transition, query, style, stagger, animate, state} from "@angul
   animations: [
     trigger('trigger1', [
 				state('show', style({
-					opacity: 1,
-					width: '200px'
+					opacity: 1.0,
 				})),
 				state('hide', style({
-					opacity: 0,
-					width: '0px'
+					opacity: 0.0,
 				})),
-				transition('* => hide', [
+				transition('show => hide', [
 					animate('1s')
 				]),
-				transition('* => show', [
+				transition('hide => show', [
 					animate('0.5s')
 				]),
 			]),
-		trigger('filterAnimation', [
-			transition(':enter, * => 0, * => -1', []),
-			transition(':increment', [
-				query(':enter', [
-					style({ opacity: 0, width: '0px'}),
-					stagger(50, [
-						animate('300ms ease-out', style({ opacity: 1, width: '*'})),
-					]),
-				], { optional: true })
-			]),
-			transition(':decrement', [
-				query(':leave', [
-          style({ width: '*'}),
-					stagger(50, [
-						animate('300ms ease-out', style({ opacity: 0, width: '0px'})),
-					]),
-				])
-			]),
-		]),
-	]
+  	/*trigger('trigger1', [
+  		state('true', style({ opacity: 0.0 })),
+  		state('false', style({ opacity: 1.0 })),
+  		transition('false <=> true', animate(500))
+  	])*/
+  ],
 })
 export class MessageComponent implements OnInit {
   constructor(private messageService: MessageService) {}
