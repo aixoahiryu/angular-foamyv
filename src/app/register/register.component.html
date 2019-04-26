@@ -1,5 +1,28 @@
-<form>
-  <input matInput placeholder="Name">
-  <input matInput placeholder="Surname">
-  <input type="submit" value="Register" />
-</form>
+<main class="container">
+  <form class="form" action="" method="get">
+    <div class="form__image"></div>
+    <div class="input">
+      <input id="email" type="email" class="input__element" placeholder=" " />
+      <label class="input__label" for="email">Email</label>
+    </div>
+    <div class="input">
+      <input id="pasword" type="password" class="input__element" placeholder=" " />
+      <label class="input__label" for="password">Password</label>
+    </div>
+    <button type="button" class="button">
+      <div class="button__label">Continue</div>
+      <div class="button__icon"></div>
+    </button>
+  </form>
+</main>
+
+<script>
+  window.addEventListener('resize', resize);
+
+function resize() {
+  const formImage = document.querySelector('.form__image');
+  formImage.style.height = document.body.scrollHeight + 'px';
+}
+
+resize();
+</script>

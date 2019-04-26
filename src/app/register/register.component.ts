@@ -11,17 +11,13 @@ import { Router } from "@angular/router";
 })
 export class RegisterComponent implements OnInit {
   constructor(private messageService: MessageService, private appService: AppService, private router: Router) {}
-  avatarLink: string = "";
+  email: string = "";
+  password: string = "";
 
   ngOnInit() {}
 
-  onSubmit(value){
-	this.appService.createUser(value, this.avatarLink)
-	.then(
-	  res => {
-	    this.router.navigate(['/sendo']);
-	  }
-	)
-}
+  onSubmit(email, password){
+	  this.appService.createUser(email, password).subscribe(result => {console.log(result);});
+  }
 
 }

@@ -35,6 +35,8 @@ ul {
 .ItemDisplay {
   height: 100%;
   margin-left: 160px;
+  text-align:center;
+  margin-top:60px;
 }
 .nav2 {
   height: 100%;
