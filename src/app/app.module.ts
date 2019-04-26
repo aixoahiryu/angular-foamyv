@@ -37,7 +37,9 @@ import { MessageComponent } from "./message/message.component";
     SendoComponent,
     SendoDetailComponent,
     CartComponent,
-    AdminUserComponent
+    AdminUserComponent,
+    MessageComponent,
+    RegisterComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   providers: [AppService, MessageService, SendoService, AuthGuard],
