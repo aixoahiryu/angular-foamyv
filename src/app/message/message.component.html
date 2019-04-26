@@ -1,25 +1,8 @@
-<div class="nav2">
-  Filter:
-  <input #searchBox class="search-box" (input)="sendSearch(searchBox.value)" />
-  Search:
-  <input
-    #searchBox2
-    class="search-box"
-    (input)="sendSearch2(searchBox2.value)"
-  />
-  Price<br>
-  <input #priceBox class="price-box" (input)="sendMin(priceBox.value)" />-
-  <input #priceBox2 class="price-box" (input)="sendMax(priceBox2.value)" /><br>
-  <select #selectSort (input)="sendOrder(selectSort.value)">
-    <option value="title">title</option>
-    <option value="price">price</option>
-  </select>
-  <select #selectAsc (input)="sendAsc(selectAsc.value)">
-    <option value="asc">Asc</option>
-    <option value="desc">Desc</option>
-  </select>
-  <div style="margin-left: 10px">
-    API:<br />
-    <a routerLink="sendo">Sendo</a>
+<div class="mess" *ngIf="!hideMessage" [@trigger1]="hideMessage? 'hide' : 'show'">
+  <div class="close" (click)="hideMessage=true">
+    X
+  </div>
+  <div class="message" >
+    {{message}}
   </div>
 </div>

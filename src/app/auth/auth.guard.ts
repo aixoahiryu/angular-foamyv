@@ -36,8 +36,8 @@ export class AuthGuard implements CanActivate {
     }
 
     //this.authService.redirectUrl = url;
-
-    this.router.navigate(["/sendo"]);
+    this.messageService.setMessage("You need to login or register");
+    this.router.navigate(["/register"]);
     return false;
   }
 }

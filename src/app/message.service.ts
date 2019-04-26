@@ -23,6 +23,10 @@ export class MessageService {
   minPrice = this.minPriceSource.asObservable();
   maxPrice = this.maxPriceSource.asObservable();
 
+  setMessage(c: string) {
+    this.messageSource.next(c);
+  }
+
   setMinPrice(c: number) {
     this.minPriceSource.next(c);
   }

@@ -10,6 +10,7 @@ import {
 import { Item } from "../item";
 import { AppService } from "../app.service";
 import firebaseApp from "../firebase.config";
+import {MessageService} from "../message.service";
 
 @Component({
   selector: "app-login",
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit, AfterViewChecked {
     this.check();
   }
 
-  constructor(private appService: AppService) {}
+  constructor(private appService: AppService, private messageService: MessageService) {}
 
   result: string;
   name: string;
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit, AfterViewChecked {
         this.check();
       },
       error => {
-        console.log(error);
+        this.messageService.setMessage(error);
       }
     );
     console.log(this.result);
