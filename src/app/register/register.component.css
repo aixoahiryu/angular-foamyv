@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700');
 html, body {
-  font-family: 'IBM Plex Sans', linkMacSystemFont, San Francisco, Roboto, Helvetica Neue, Segoe UI, sans-serif;
+  font-family: Segoe UI, sans-serif;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   box-sizing: border-box;

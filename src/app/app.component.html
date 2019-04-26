@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="main">
-  <app-nav1></app-nav1>
+  <app-nav1 *ngIf="router.url!='/register'"></app-nav1>
 
   <div>
-    <app-nav2></app-nav2>
+    <app-nav2 *ngIf="router.url!='/register'"></app-nav2>
 
-    <div class="ItemDisplay" [@routeAnimations]="prepareRoute(outlet)">
+    <div [class.ItemDisplay]="router.url!='/register'" [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </div>

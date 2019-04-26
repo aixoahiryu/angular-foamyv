@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Item } from "./item";
 import {slideInAnimation} from "./animation";
+import {Router} from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -9,7 +10,7 @@ import {slideInAnimation} from "./animation";
   animations: [slideInAnimation]
 })
 export class AppComponent {
-  title = "CodeSandbox";
+  constructor(private router: Router){}
 
   Items: Item[] = [
     { title: "Black T-shirt", price: 40 },
