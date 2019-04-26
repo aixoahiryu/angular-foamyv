@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
   templateUrl: "./register.component.html",
   styleUrls: ["./register.component.css"]
 })
-export class Nav2Component implements OnInit {
+export class RegisterComponent implements OnInit {
   constructor(private messageService: MessageService, private appService: AppService, private router: Router) {}
   avatarLink: string = "";
 

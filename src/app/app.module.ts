@@ -21,6 +21,8 @@ import { SendoService } from "./sendo.service";
 import { AdminUserComponent } from "./admin-user/admin-user.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from "./register/register.component";
+import { MessageComponent } from "./message/message.component";
 
 @NgModule({
   declarations: [

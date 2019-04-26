@@ -7,7 +7,7 @@ import { MessageService } from "../message.service";
   templateUrl: "./message.component.html",
   styleUrls: ["./message.component.css"]
 })
-export class Nav2Component implements OnInit {
+export class MessageComponent implements OnInit {
   constructor(private messageService: MessageService) {}
   message:string = "";
 
