@@ -13,8 +13,6 @@ import { Location } from "@angular/common";
 export class RegisterComponent implements OnInit {
   constructor(private messageService: MessageService, private appService: AppService, private router: Router,
   private location: Location) {}
-  email: string = "";
-  password: string = "";
 
   ngOnInit() {}
 

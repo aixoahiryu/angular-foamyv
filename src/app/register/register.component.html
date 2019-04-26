@@ -2,19 +2,20 @@
   <form class="form" action="" method="get">
     <div class="form__image"></div>
     <div class="input">
-      <input #emailInput type="email" class="input__element" placeholder="Email" />
+      <input #emailInput type="email" class="input__element" placeholder="Email" (input)="emailInput.value"/>
       <label class="input__label" for="email">Email</label>
     </div>
     <div class="input">
-      <input #passwordInput type="password" class="input__element" placeholder="Password" />
+      <input #passwordInput type="password" class="input__element" placeholder="Password" 
+      (input)="passwordInput.value"/>
       <label class="input__label" for="password">Password</label>
     </div>
     <button type="button" class="button" (click)=goBack()>
-      <div class="button__label">Return</div>
+      <div class="button__label">Home</div>
       <div class="button__icon"></div>
     </button>
-    <button type="button" class="button">
-      <div class="button__label">Continue</div>
+    <button type="button" class="button" (click)="onSubmit(emailInput.value, passwordInput.value)">
+      <div class="button__label">Register</div>
       <div class="button__icon"></div>
     </button>
   </form>

@@ -18,7 +18,7 @@ import {MessageService} from "../message.service";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit, AfterViewChecked {
-  ngOnInit() {  }
+  ngOnInit() { }
   ngAfterViewChecked(){
     this.check();
   }
@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit, AfterViewChecked {
     this.appService.getLogin(username, password).subscribe(
       result => {
         this.result = result;
-        
       },
       error => {
         this.messageService.setMessage("Login error");
@@ -47,7 +46,6 @@ export class LoginComponent implements OnInit, AfterViewChecked {
 
   logout() {
     this.appService.logout().subscribe(result => {
-      
       this.check();
     });
   }
