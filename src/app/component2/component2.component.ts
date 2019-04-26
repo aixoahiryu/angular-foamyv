@@ -19,5 +19,6 @@ export class Com2Component implements OnInit {
   sendCount(c: number) {
     this.count.emit(c);
     this.messageService.addCart(this.item1);
+    this.messageService.setMessage("Added to cart");
   }
 }

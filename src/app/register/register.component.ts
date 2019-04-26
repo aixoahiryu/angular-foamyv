@@ -17,7 +17,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(email, password){
-	  this.appService.createUser(email, password).subscribe(result => {console.log(result);});
+	  this.appService.createUser(email, password).subscribe(result => {
+      this.router.navigate(["/sendo"]);
+
+    });
   }
 
   goBack(){
