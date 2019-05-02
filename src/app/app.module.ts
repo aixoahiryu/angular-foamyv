@@ -23,6 +23,7 @@ import { AuthGuard } from "./auth/auth.guard";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from "./register/register.component";
 import { MessageComponent } from "./message/message.component";
+import { LandingComponent } from "./landing/landing.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MessageComponent } from "./message/message.component";
     CartComponent,
     AdminUserComponent,
     MessageComponent,
-    RegisterComponent
+    RegisterComponent,
+    LandingComponen
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   providers: [AppService, MessageService, SendoService, AuthGuard],
