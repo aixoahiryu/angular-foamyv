@@ -9,6 +9,7 @@ import { AdminUserComponent } from "./admin-user/admin-user.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { RegisterComponent } from "./register/register.component";
 import { MessageComponent } from "./message/message.component";
+import { LandingComponent } from "./landing/landing.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/sendo", pathMatch: "full" },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: "cart", component: CartComponent, canActivate: [AuthGuard] , data: {animation: 'CartPage'}},
   { path: "admin", component: AdminUserComponent },
   { path: "message", component: MessageComponent },
-  { path: "register", component: RegisterComponent }
+  { path: "register", component: RegisterComponent },
+  { path: "welcome", component: LandingComponent }
 ];
 
 @NgModule({

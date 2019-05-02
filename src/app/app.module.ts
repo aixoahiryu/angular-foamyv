@@ -41,7 +41,7 @@ import { LandingComponent } from "./landing/landing.component";
     AdminUserComponent,
     MessageComponent,
     RegisterComponent,
-    LandingComponen
+    LandingComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   providers: [AppService, MessageService, SendoService, AuthGuard],
